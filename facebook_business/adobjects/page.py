@@ -1260,9 +1260,9 @@ class Page(
             self.assure_call()
             return request.execute()
 
-    def get_insights(self, fields=None, params=None, is_async=False, batch=None, pending=False):
+    def get_insights(self, fields=None, params=None, async_=False, batch=None, pending=False):
         from facebook_business.adobjects.insightsresult import InsightsResult
-        if is_async:
+        if async_:
           return self.get_insights_async(fields, params, batch, pending)
         param_types = {
             'date_preset': 'date_preset_enum',
